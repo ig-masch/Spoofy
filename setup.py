@@ -1,9 +1,9 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="spoofy",
     version="0.1.0",
-    py_modules=["spoofy"],  # this assumes there's a spoofy.py at the root
+    packages=find_packages(),  # this finds all folders with __init__.py
     install_requires=[
         "colorama",
         "dnspython>=2.2.1",
@@ -13,7 +13,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "spoofy=spoofy:main",  # 'main' should be the function that runs the app
+            "spoofy=spoofy:main",  # assumes main() is in spoofy.py
         ],
     },
 )
